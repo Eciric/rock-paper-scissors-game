@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+@import url(./app/css/reset.css);
+@import url(./app/css/variables.css);
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+
+html,
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    var(--clr-bg-radial-gradient-1),
+    var(--clr-bg-radial-gradient-2)
+  );
+}
