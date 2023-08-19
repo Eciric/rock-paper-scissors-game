@@ -1,5 +1,6 @@
 :root {
-  --clr-primary-scissors-gradient: hsl(39, 89%, 49%) to hsl(40, 84%, 53%);
+  --clr-primary-scissors-gradient-1: hsl(39, 89%, 49%);
+  --clr-primary-scissors-gradient-2: hsl(40, 84%, 53%);
   --clr-primary-paper-gradient: hsl(230, 89%, 62%) to hsl(230, 89%, 65%);
   --clr-primary-rock-gradient: hsl(349, 71%, 52%) to hsl(349, 70%, 56%);
   --clr-primary-lizard-gradient: hsl(261, 73%, 60%) to hsl(261, 72%, 63%);

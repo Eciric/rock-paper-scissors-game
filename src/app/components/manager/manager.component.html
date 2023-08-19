@@ -1,0 +1,56 @@
+<div
+  class="view-switcher"
+  *ngIf="
+    gameState.state === 'startingPhase';
+    then startingPhase;
+    else gameState.state === 'computerPhase' ? computerPhase : resultsPhase
+  "
+></div>
+<ng-template #startingPhase>
+  <div class="options">
+    <div class="options__row-2">
+      <app-option
+        [type]="{ type: 'rock' }"
+        (optionClick)="handleStateChange($event)"
+      ></app-option>
+      <app-option
+        [type]="{ type: 'paper' }"
+        (optionClick)="handleStateChange($event)"
+      ></app-option>
+    </div>
+    <div class="options__row-1">
+      <app-option
+        [type]="{ type: 'scissors' }"
+        (optionClick)="handleStateChange($event)"
+      ></app-option>
+    </div>
+  </div>
+</ng-template>
+<ng-template #computerPhase>
+  <div class="options">
+    <div class="options__row-2">
+      <app-option
+        [type]="{ type: 'rock' }"
+        (optionClick)="handleStateChange($event)"
+      ></app-option>
+      <app-option
+        [type]="{ type: 'paper' }"
+        (optionClick)="handleStateChange($event)"
+      ></app-option>
+    </div>
+  </div>
+</ng-template>
+<ng-template #resultsPhase>
+  <div class="options">
+    <div class="options__row-2">
+      <app-option
+        [type]="{ type: 'rock' }"
+        (optionClick)="handleStateChange($event)"
+      ></app-option>
+      <app-option
+        [type]="{ type: 'paper' }"
+        (optionClick)="handleStateChange($event)"
+      ></app-option>
+    </div>
+  </div>
+</ng-template>

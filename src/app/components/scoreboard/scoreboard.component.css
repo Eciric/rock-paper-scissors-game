@@ -11,7 +11,7 @@
 
 .scoreboard__title {
   padding: 1.5rem;
-  font-size: 2.5rem;
+  font-size: 3rem;
   max-width: 5ch;
   line-height: 1;
   text-transform: uppercase;
@@ -23,8 +23,7 @@
   justify-content: center;
   align-items: center;
   width: 17.5%;
-  margin: 1rem;
-  padding: 0.5rem;
+  margin: 1.5rem;
   border-radius: 10px;
   background-color: white;
 }
