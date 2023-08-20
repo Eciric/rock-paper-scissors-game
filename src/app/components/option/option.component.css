@@ -7,14 +7,10 @@
   width: 200px;
   aspect-ratio: 1;
   border-radius: 100%;
-  border: 20px solid transparent;
-  border: radial-gradient(
-    var(--clr-primary-scissors-gradient-1),
-    var(--clr-primary-scissors-gradient-2)
-  );
-  background-clip: padding-box, border-box;
-  background-origin: padding-box, border-box;
   z-index: 2;
+  background-size: 50% !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
 }
 
 .option__ring {

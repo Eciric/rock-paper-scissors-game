@@ -1,54 +1,73 @@
-<div
-  class="view-switcher"
-  *ngIf="
-    gameState.state === 'startingPhase';
-    then startingPhase;
-    else gameState.state === 'computerPhase' ? computerPhase : resultsPhase
-  "
-></div>
+<app-scoreboard class="container" [score]="score"></app-scoreboard>
+<div class="options">
+  <div class="triangle" *ngIf="gameState.state === 'startingPhase'">
+    <img src="./assets/images/bg-triangle.svg" alt="hollow triangle" />
+  </div>
+
+  <div
+    *ngIf="
+      gameState.state === 'startingPhase';
+      then startingPhase;
+      else gameState.state === 'computerPhase' ? computerPhase : resultsPhase
+    "
+  ></div>
+</div>
 <ng-template #startingPhase>
-  <div class="options">
-    <div class="options__row-2">
-      <app-option
-        [type]="{ type: 'rock' }"
-        (optionClick)="handleStateChange($event)"
-      ></app-option>
-      <app-option
-        [type]="{ type: 'paper' }"
-        (optionClick)="handleStateChange($event)"
-      ></app-option>
-    </div>
-    <div class="options__row-1">
-      <app-option
-        [type]="{ type: 'scissors' }"
-        (optionClick)="handleStateChange($event)"
-      ></app-option>
-    </div>
+  <div class="options__row-2">
+    <app-option
+      [type]="{ type: 'rock' }"
+      (optionClick)="handleStateChange($event)"
+    ></app-option>
+    <app-option
+      [type]="{ type: 'paper' }"
+      (optionClick)="handleStateChange($event)"
+    ></app-option>
+  </div>
+  <div class="options__row-1">
+    <app-option
+      [type]="{ type: 'scissors' }"
+      (optionClick)="handleStateChange($event)"
+    ></app-option>
   </div>
 </ng-template>
 <ng-template #computerPhase>
-  <div class="options">
-    <div class="options__row-2">
+  <div class="options__row-2">
+    <div class="options__player">
+      <p>You picked</p>
       <app-option
-        [type]="{ type: 'rock' }"
+        [type]="{ type: playerPick.type }"
         (optionClick)="handleStateChange($event)"
       ></app-option>
+    </div>
+    <div class="options__house">
+      <p>The House picked</p>
       <app-option
-        [type]="{ type: 'paper' }"
+        [type]="{ type: computerPick.type }"
         (optionClick)="handleStateChange($event)"
       ></app-option>
     </div>
   </div>
 </ng-template>
 <ng-template #resultsPhase>
-  <div class="options">
-    <div class="options__row-2">
+  <div class="options__row-2">
+    <div class="options__player">
+      <p>You picked</p>
       <app-option
-        [type]="{ type: 'rock' }"
+        [type]="{ type: playerPick.type }"
         (optionClick)="handleStateChange($event)"
       ></app-option>
+    </div>
+    <div class="game-results">
+      <h2 class="results__title">You {{ gameResult.result }}</h2>
+      <button class="results__button" (click)="restartGame()">
+        Play again
+      </button>
+    </div>
+
+    <div class="options__house">
+      <p>The House picked</p>
       <app-option
-        [type]="{ type: 'paper' }"
+        [type]="{ type: computerPick.type }"
         (optionClick)="handleStateChange($event)"
       ></app-option>
     </div>

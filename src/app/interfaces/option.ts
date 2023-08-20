@@ -1,3 +1,3 @@
 export interface Option {
-  type: 'rock' | 'paper' | 'scissors';
+  type: 'rock' | 'paper' | 'scissors' | 'empty';
 }
